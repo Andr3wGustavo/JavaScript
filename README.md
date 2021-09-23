@@ -1,3 +1,3 @@
 # CFBJS
-Curso de JS do canal CFB
+Curso de JS do canal CFB!
 
