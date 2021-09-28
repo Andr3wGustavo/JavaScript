@@ -8,8 +8,51 @@
 
     <script>
 
-        
+        var pos, msg, pontos;
+        pontos=1001;
+        if(pontos >= 1000){
+            pos = 1;
 
+        }else if(pontos >= 800){
+            pos = 2;
+
+        }else if(pontos >= 600){
+            pos = 3;
+
+        }else{
+            pos = 0;
+
+        }
+        switch(pos){
+
+            case 1:
+                msg = "Primerio lugar!<br>Medalha de ouro!";
+                break;
+            case 2:
+                msg = "Segundo lugar!<br>Medalha de prata!";
+                break;
+            case 3:
+                msg = "Terceiro lugar!<br>Medalha de bronze!";
+                break;
+            default:
+                msg = "Não classificado!"  
+
+        }
+
+        switch(pos){
+
+            case 1:
+            case 2:
+            case 3:
+                msg += "<br>Subiu ao Podio!";
+                break;
+            default:
+                msg += "<br>Não subiu ao Podio!"
+
+    
+        }
+
+        document.write(msg)
     </script>
 
 </head>
