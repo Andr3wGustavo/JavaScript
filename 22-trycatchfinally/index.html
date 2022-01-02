@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tratamento de Erros</title>
+    <script>
+    //Basicamente ele testa um comando e se der erro em alguma parte ele executa outro comando
+
+        var num;//maximo 10
+
+        try{//testa se tem um erro
+            num=prompt('Digite um valor: ');
+            if(num>10){//esse if faz gerar um erro se o valor digitado for maior  que 10
+                throw new Error('Valor Invalido! O valor deve ser menor ou igual a 10!');//gera um erro "manualmente"
+            }
+            document.write('Valor: '+ num);//write escrito errado faz com que ele de erro e passe para o catch
+        }catch(e){
+            document.write('ERRO: '+ e.message );//mostra o erro para o usuario
+        }finally{//faz o fim do tratamento do erro
+            document.write('<br>Fim do tratamento')
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
