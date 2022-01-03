@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerHTML</title>
+</head>
+<body>
+    <p id="texto">Andre Lindo</p>
+    <input type="text" id="cxtexto" value="CFB Cursos">
+    <div id="dv">Texto da Div</div>
+    <script>
+        //document.getElementById("cxtexto").value="Curso de JavaScript";
+        var txt=document.getElementById("texto").innerHTML="Vou para academia Hoje!";
+        document.getElementById("dv").innerHTML="Novo Texto";
+    </script>
+</body>
+</html>
