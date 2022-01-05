@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        label{
+            display: block;    
+        }
+        input{
+            display: block;
+        }
+        input[type=submit],label{
+            margin-top: 10px;
+        }
+    </style>
+    <title>Cfb Cursos  -  JavaScript</title>
+</head>
+<body>
+    <form action="#" method="post" name="curso1" id="curso1">
+        <label>Nome</label>
+        <input type="text" name="fNome" id="teste" value="Primeiro - 1">
+        <label>Senha</label>
+        <input type="password" name="fSenha" value="123">
+        <input type="submit" name="btEnviar" value="Enviar">
+    </form>
+    <hr>
+    <script>
+        document.write(document.getElementById("curso1").elements[0].value)//seleciona pelo id , pega o elemento 0, e mostra na tela o value
+
+        var fm=document.forms[0];//cria uma coleção com os forms
+        var el=fm.elements; //pega todos os elementos que estao no form
+        for(var i=0;i<el.length-1;i++){//manipula todos os elementos de um vez
+            el[i].style.backgroundColor="#ddd";
+            el[i].value="CFBcursos";
+        }
+    </script>
+</body>
+</html>

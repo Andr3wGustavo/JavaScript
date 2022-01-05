@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var ndt=new Date(1989, 03, 08);// ano, mes, dia, hora, seg, mil
+        var dt=new Date();
+
+        //ndt.setFullYear(dt.getFullYear()+234);
+
+        var dia=ndt.getDate();//pega o dia
+        var mes=ndt.getMonth();//pega o mes
+        var ano=ndt.getUTCFullYear();//pega o ano
+        var diasem=ndt.getDay()//o dia no calendario
+
+        var horas=ndt.getHours();//pega a hora
+        var minutos=ndt.getMinutes();//pega os minutos
+        var segundos=ndt.getSeconds();//pega os segundos
+
+        var meses=new Array("Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro");
+        var semanas=new Array("Domingo", "Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado");
+
+        document.write(semanas[diasem] + ", " + dia + " de " +meses[mes] + " de " + ano + "<br>");
+        document.write(horas + ":"+ minutos+ ":"+segundos)
+
+
+    </script>
+    <title>Manipulado data</title>
+</head>
+<body>
+    
+</body>
+</html>
