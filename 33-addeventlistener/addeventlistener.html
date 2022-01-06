@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>addEventListener</title>
+    <style>
+        #dv1{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #000;
+            background-color: #f00;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+    </style>
+    <script>
+        function msg(){
+            alert("Andre Lindo!")
+        }
+        function cor1(obj, cor){
+            var obj=document.getElementById("dv1");
+            obj.style.backgroundColor=cor;
+        }
+        function cor2(obj, cor){
+            var obj=document.getElementById("dv1");
+            obj.style.backgroundColor=cor;
+        }
+        //inicialização de eventos
+        function addEventos(){
+            var obj=document.getElementById("dv1");
+            obj.addEventListener("click", msg);
+            //excuta msg quando clicar no obj
+            obj.addEventListener("mouseover",function(event){
+                cor1(obj,"#fff")
+            });
+            //excuta cor1 quando o mouse estiver sobre o obj
+            obj.addEventListener("mouseout",function(event){
+                cor2(obj,"#f00")
+            });
+            //executa cor2 quando o mouse estiver fora do obj
+        }
+       window.addEventListener("load",addEventos);//substitui o onload no body
+    </script>
+</head>
+<body>
+    <div id="dv1"></div>
+</body>
+</html>
