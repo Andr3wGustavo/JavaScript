@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #dv1{
+            width: 200px;
+            height: 200px;
+            border: 1px solid #000;
+        }
+    </style>
+    <script>
+
+        function mudaCor(obj,cor){ //função muda a cor do obj
+            obj.style.backgroundColor=cor;//muda a cor do obj
+        }
+        function mudaPos(obj){//função muda a posição do obj
+            obj.style.position="absolute";
+            obj.style.left=Math.random()*500+"px";//muda a posição do obj
+            obj.style.top=Math.random()*500+"px";//muda a posição do obj
+        }
+        function ola(){//função faz as saudação dependendo da hora 
+            var data=new Date();
+            var hora=data.getHours;
+            var txt=" ";
+
+            if(hora<12){
+                txt="Bom dia!";
+            }else if(hora<18){
+                txt="Boa tarde!"
+            }else{
+                txt="Boa noite!"
+            }
+            alert("Olá, "+txt);
+        }
+    </script>
+    <title>Eventos</title>
+</head>
+<body onload="ola()"><!--Qunaod a pagina for carregada ele chama a função ola-->
+    <div id="dv1" onmouseover="mudaCor(this, '#f00')" onmouseout="mudaCor(this, '#fff')"></div> <!--Quando o mouse passar por cima da div ela muda de cor, quando estiver fora tambem muda de cor-->
+    <br>
+    <button onmouseover="mudaPos(this)">Clique em mim</button><!--Quando o mouse estiver em cima do botao, ele fica trocando de posição-->
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        var numeros=new Array(10,2,5,30,25,19,20,50,340);
+        function media(nums){
+            var soma=0
+            for(var i=0;i<nums.length;i++){
+                soma+=nums[i];
+            }
+            return Math.round(soma/nums.length);
+        }
+        document.write(media(numeros)+"<br>");
+
+        function soma1(n1, n2){
+            return n1+n2; //retorna a soma de n1 e n2
+        }
+        var res=soma1(7,7) //armazena o retorno da função
+        document.write(soma1(7,7)+"<br>");
+
+        function soma2(n1, n2){
+            var res=n1+n2;
+            document.write(res+"<br>")
+        }
+        soma2(5,2)
+        
+        function escreve(){
+            document.write("Curso de JavaScript");
+        }
+        escreve();
+        
+    </script>
+    <title>Funcoes</title>
+</head>
+<body>
+    
+</body>
+</html>
