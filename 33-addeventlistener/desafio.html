@@ -19,22 +19,15 @@
     <script>
         var px=0;
         var py=0;
-        var ativado=false;
-        document.addEventListener("keydown", move)
-        document.addEventListener("click",)
-        function ativa(){
-            if(ativado){
-                alert("Evento KeyDown Adicionado");
-            }else{
-                alert("Evento KeyDown Removido");
-            }
-        }
-        function move(){
+        function ativar(){
+            var obj=document.getElementById("dv1");
+
+            alert("Evento Keydown Adicionado!")
+
+            function move(){    
             var obj=document.getElementById("dv1");
             var tecla=event.keyCode;
-            if(!ativado){
-                return;
-            }
+
             if(tecla==37){
                 px-=10;
                 obj.style.left=px+"px";
@@ -48,12 +41,14 @@
                 py+=10;
                 obj.style.top=py+"px";
             }else if(tecla==13){
-                this.removeEventListendader("keydown", move);
-            }else if(tecla==onclick){
-                
+                alert("Evento keyDown removido!")
+                document.removeEventListener("keydown", move);
             }
+            }
+            document.addEventListener("keydown",move)
         }
-    
+        document.addEventListener("click",ativar)
+        
     </script>
 </head>
 <body>

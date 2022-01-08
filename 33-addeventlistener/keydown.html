@@ -38,7 +38,7 @@
                 obj.style.top=py+"px";
             }else if(tecla==13){
                 alert("Evento KeyDown Removido!")
-                thisremoveEventListener("keydown", move);
+                this.removeEventListener("keydown", move);
             }
         }
         document.addEventListener("keydown", move);
