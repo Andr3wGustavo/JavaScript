@@ -13,7 +13,7 @@
             background-color: white;
             position: absolute;
             left: 0px;
-            left: 0px;
+            top: 0px;
         }
     </style>
     <script>
@@ -21,7 +21,7 @@
         var py=0;
         function ativar(){
             var obj=document.getElementById("dv1"); //aponta para a div
-
+            obj.style.backgroundColor="#f00"
             alert("Evento Keydown Adicionado!") //quando clicar na div ele mostra o alert
 
             function move(){   // função q estabele os criterios para o elemento se mover 
@@ -42,6 +42,7 @@
                 obj.style.top=py+"px";
             }else if(tecla==13){
                 alert("Evento keyDown removido!")
+                obj.style.backgroundColor="#fff"
                 document.removeEventListener("keydown", move);//remove o escutador se apertar enter
             }
             }
