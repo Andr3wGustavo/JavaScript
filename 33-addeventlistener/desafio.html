@@ -13,18 +13,18 @@
             background-color: white;
             position: absolute;
             left: 0px;
-            left: 0px;
+            top: 0px;
         }
     </style>
     <script>
         var px=0;
         var py=0;
         function ativar(){
-            var obj=document.getElementById("dv1");
+            var obj=document.getElementById("dv1"); //aponta para a div
+            obj.style.backgroundColor="#f00"
+            alert("Evento Keydown Adicionado!") //quando clicar na div ele mostra o alert
 
-            alert("Evento Keydown Adicionado!")
-
-            function move(){    
+            function move(){   // função q estabele os criterios para o elemento se mover 
             var obj=document.getElementById("dv1");
             var tecla=event.keyCode;
 
@@ -42,12 +42,13 @@
                 obj.style.top=py+"px";
             }else if(tecla==13){
                 alert("Evento keyDown removido!")
-                document.removeEventListener("keydown", move);
+                obj.style.backgroundColor="#fff"
+                document.removeEventListener("keydown", move);//remove o escutador se apertar enter
             }
             }
-            document.addEventListener("keydown",move)
+            document.addEventListener("keydown",move)//apertar algum botao ativa a função move
         }
-        document.addEventListener("click",ativar)
+        document.addEventListener("click",ativar)//se clicar na div ativa a função move
         
     </script>
 </head>
