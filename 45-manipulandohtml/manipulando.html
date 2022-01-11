@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulando HTML via JS</title>
+    <style>
+        /*#carro{
+            width: 840px;
+            height: 980px;
+        }*/
+        .c1{
+            width: 840px;
+            height: 980px;
+            background-image:url("imgs/c1.png");
+        }
+        .c2{
+            width: 185px;
+            height: 273px;
+            background-image: url("imgs/c2.png");
+        }
+        .c3{
+            width: 256px;
+            height: 320px;
+            background-image: url("imgs/c3.png");
+        }
+    </style>
+        <script>
+            //document.getElementById("carro").setAttribute("class", "c1")//adicionar class c1 na div
+
+            function trocaCarro(c){
+                var obj=document.getElementById("carro")
+                if(c==1){
+                    obj.setAttribute("class", "c1")
+                }else if(c==2){
+                    obj.setAttribute("class", "c2")
+                }else if(c==3){
+                    obj.setAttribute("class", "c3")
+                }
+            }
+
+            function remover(){//remove o atributo class
+                document.getElementById("carro").removeAttribute("class")
+            }
+
+            function verifica(){//verifica se o atributo class esta na tag
+                if(document.getElementById("carro").hasAttribute("class")){
+                    alert("Atributo class está na tag")
+                }else{
+                    alert("Sem atributo class")
+                }
+            }
+
+            window.addEventListener("load",iniciar)
+        </script>  
+</head>
+<body>
+    <button onclick="trocaCarro(1)">Carro 1</button>
+    <button onclick="trocaCarro(2)">Carro 2</button>
+    <button onclick="trocaCarro(3)">Carro 3</button>
+    <button onclick="remover()">Remover Carro</button>
+    <button onclick="verifica()">Verifica</button>
+    <div id="carro"></div>
+</body>
+</html>
