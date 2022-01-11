@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Js</title>
+    <style>
+        #dvslider{
+            width: 1000px;
+            height: 300px;
+            border: 1px solid black;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .btSlider{
+            background-color: rgba(0, 0, 0, 0.40);
+            height: 30%;
+            color: white;
+            cursor: pointer;
+            outline: none;
+            margin: 10px;
+            border: none;
+        }
+        #bordaLoad{
+            width: 100%;
+            height: 5px;
+            margin-top: 25%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+
+        }
+        #dvbarra{
+            width: 0%;
+            height: 100%;
+            background-color: white;
+        }
+    </style>
+    <script>
+
+        var imgs=new Array()
+        var slider,imgAtual,maxImg,tmp,vtempo,vbarra,tempoTroca
+
+        function preLoad(){
+            var s=1
+
+            for(var a=0;a<4;a++){
+                imgs[a]=new Image()
+                imgs[a].src="imgs/s"+s+".jpg"
+                s++
+            }
+        }
+
+        function loadImg(img){
+            slider.style.backgroundImage="url('"+imgs[img].src+"')"
+        }
+
+        function start(){
+            preLoad()
+            imgAtual=0
+            maxImg=imgs.length-1
+            vbarra=document.getElementById("dvbarra")
+            slider=document.getElementById("dvslider")
+            loadImg(imgAtual)
+            tempoTroca=0
+            anima()
+        }
+        
+        function change(dir){
+            tempoTroca=0
+
+            imgAtual+=dir
+            if(imgAtual>maxImg){
+                imgAtual=0
+            }else if(imgAtual<0){
+                imgAtual=maxImg
+            }
+            loadImg(imgAtual)
+        }
+
+        function anima(){
+            tempoTroca++
+            if(tempoTroca>=500){
+                tempoTroca=0
+                change(1)
+            }
+            vtempo=tempoTroca/5
+            vbarra.style.width=vtempo+"%"
+            window.requestAnimationFrame(anima)
+        }
+
+        window.addEventListener("load",start)
+
+    </script>
+</head>
+<body>
+    <div id="dvslider">
+        <button class="btSlider" onclick="change(-1)"><</button>
+        <div id="bordaLoad">
+            <div id="dvbarra"></div>
+        </div>
+        <button class="btSlider" onclick="change(1)">></button>
+    </div>
+</body>
+</html>
