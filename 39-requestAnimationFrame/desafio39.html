@@ -22,8 +22,13 @@
     function inicia() { 
       dx=1, dy=0, speed=5, px=0, py=0
       player=document.getElementById("jogador")
+      iniciarbtn=document.getElementById("bt1")
+      pararbtn=document.getElementById("bt2")
       player.addEventListener("click", parar)
       game()
+      iniciarbtn.addEventListener("click", game)
+      pararbtn.addEventListener("click", parar)
+
     }
 
     function parar() {

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursividade</title>
+    <style>
+        #quad{
+            border: 1px solid #000;
+            background-color: red;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+    <script>
+        //Contador
+
+        function contador(min, max){//um contador basico, ele ja impremi o primeiro valor na tela, apos isso, se o valor minimo for menos que o maximo, ele chama contador denovo mas dessa vez fazendo um pre incremento em min
+            document.write(min+"<br>")
+            if(min<max){
+                contador(++min,max)
+            }
+        }
+        contador(0,10)
+
+        //Fatorial
+
+        function fatorial(n){//basicamente ele retorna n*n-1 até o n ser igual a 1, ai ele retorna 1
+            if(n==1){
+                return 1
+            }
+            return n*fatorial(n-1)
+        }
+        document.write(fatorial(4))
+        
+    </script>
+</head>
+<body>
+    <div id="quad"></div>
+    <Script>
+        var obj=document.getElementById("quad")
+        var ang=0
+        var anima
+
+        function gira(){
+            obj.style.transform="rotate("+ang+"deg)"//faz a div girar
+            ang++//incremento mais um grau no angulo
+            if(ang>360){ // quando o angulo chegar em 360 ele zera
+                ang=0
+            }
+            anima=requestAnimationFrame(gira)//gera a animação toda vez 
+        }
+        gira()
+
+    </Script>
+</body>
+</html>

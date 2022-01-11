@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Js</title>
+    <style>
+        #dvslider{
+            width: 1000px;
+            height: 300px;
+            border: 1px solid black;
+            margin: auto;
+        }
+    </style>
+    <script>
+
+        var imgs=new Array()
+        var slider,imgAtual,maxImg,tmp
+
+        function preLoad(){//função que faz carregar as imagens da pasta imgs, basicamente ela cria um array que organiza as dentro dele, cada imagem é colocada dentro do array atraves de um for que incrementa 1 no nome do arquivo
+            var s=1
+
+            for(var a=0;a<4;a++){
+                imgs[a]=new Image()
+                imgs[a].src="imgs/s"+s+".jpg"
+                s++
+            }
+        }
+
+        function loadImg(img){
+            slider.style.backgroundImage="url('"+imgs[img].src+"')"//muda a background da imagem, recebendo as imagens do array com o incidice q ele receber como parametro
+        }
+
+        function start(){//executa o preload das imagens, define o tamnho maximo, e define qual a primiera imagem, usando a function loadImg e como parametro a imagem atual
+            preLoad()
+            imgAtual=0
+            maxImg=imgs.length-1
+            slider=document.getElementById("dvslider")
+            loadImg(imgAtual)
+            tmp=setInterval(change,2000) // cada 2s ele troca e imagem
+        }
+        
+        function change(){//incrementa na img atual, assim ela vai pra proxima imagem, se a imagem for maior que o limite de imagens, ele zera e volta para a primera
+            imgAtual++
+            if(imgAtual>maxImg){
+                imgAtual=0
+            }
+            loadImg(imgAtual)
+        }
+
+        window.addEventListener("load",start)//começo do codigo quando a pagina for carregada
+
+    </script>
+</head>
+<body>
+    <div id="dvslider"></div>
+</body>
+</html>
