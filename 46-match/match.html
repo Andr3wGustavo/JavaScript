@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Match</title>
+</head>
+<body>
+    <p id="txt">Cfb Cursos - cursos de JavaScript - aula 46</p>
+
+    <script>
+
+        var texto=document.getElementById("txt").innerHTML
+
+        var res=texto.match(/[a-g]/ig)
+
+        document.write(res + ":" +res.length + "<br>")
+
+        document.write(res[1])//pega a primera palavra do array
+        
+        
+    </script>
+</body>
+</html>
