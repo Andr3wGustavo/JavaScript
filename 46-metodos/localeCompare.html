@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodos</title>
+</head>
+<body>
+    <p id="txt">CFB Cursos - Curso de Javascriopt</p>
+
+    <script>
+
+        var texto1=document.getElementById("txt").innerHTML
+        var texto2= "fodase"
+        var res=texto1.localeCompare(texto2)//locale compare, basicamente verifica se uma string é igual a outra
+
+        //0 = iguais
+        //!=0 diferentes
+        
+        if (res == 0){
+            document.write("Strings são iguais")
+        }else{
+            document.write("Strings são diferentes")
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodos</title>
+</head>
+<body>
+    <p id="txt">CFB Cursos - Curso de Javascriopt</p>
+
+    <script>
+
+        var texto1=document.getElementById("txt").innerHTML
+        var res=texto1.indexOf("J")//mostra a posição do primeiro caractere encontrado, case sentivee, podemos usar o lastIndexOf para verificar o ultimo elemento
+        
+        if (res<0){
+            document.write("Letra não encontrada!")
+        }else{
+            document.write(res)
+        }
+
+    </script>
+
+</body>
+</html>
