@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objeto Window</title>
+    <script>
+        var minhaJanela
+
+        function abreJanela(){
+            minhaJanela=window.open("teste.html", "_blank", "width=300, height=300, top=300, left=300",)//abre o script do arquivo teste.html
+        }
+
+        function fechaJanela(){
+            minhaJanela.close()
+        }// fecha a janela assim que clicar no botao
+
+    </script>
+
+</head>
+<body>
+    
+    <button onclick="abreJanela()">Abre nova Janela</button>
+
+    <button onclick="fechaJanela()">Fecha nova Janela</button>
+
+    <iframe name= "cfb" src=""></iframe>
+
+
+</body>
+</html>
