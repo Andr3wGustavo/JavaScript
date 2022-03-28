@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InnerWidth</title>
+
+    <style>
+        #painel{
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 15px;
+            width: 150px;
+            height: 100px;
+        }
+    </style>
+    <script>
+
+        var w, h, px, py, painel
+        
+
+       
+
+        function info(){
+            painel.innerHTML="L:"+w+" - A:"+h+"<br>X:"+px+" Y:"+py
+
+            w=window.innerWidth//Obtem a largura da janela
+            h=window.innerHeight
+
+            px=window.screenX
+            py=screenY
+        }
+
+        function inicia(){
+            painel=document.getElementById('painel')
+            
+        }//inicia as variaveis e assim que loadar a pag ela inicia
+
+
+        window.addEventListener('load', inicia)
+
+    </script>
+
+</head>
+<body>
+    
+    <button onclick="info()">Tamanho</button>
+
+    <div id="painel"></div>
+
+</body>
+</html>
